@@ -1,4 +1,3 @@
-# API_Doc_Standard
 # API 接口文档规范 API document standard
  
   V1.0
@@ -25,9 +24,8 @@
 
 ```
 {
-    “code”:”“, //必选,返回码
-    “message”:”“, //可选，返回消息， 
-     
+    "code":"", //必选,返回码
+    "message":"" //可选，返回消息， 
 }
 ```
 > Api returnCode定义
