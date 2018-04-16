@@ -66,7 +66,7 @@ put php  code here
 请求协议|HTTP,HTTPS
 请求方法|POST,GET,PUT,DELETE,HEAD,OPTIONS,PATCH.
 请求格式|form url encoded,multipart form,file,json,xml...
-请求url| http://localhost/json
+请求url| http://localhost/pushmsg?name=tom
 请求头(和请求格式对应)|Content-Type:application/x-www-form-urlencoded,Content-Type:application/multipart/form-data,Content-Type:application/octet-stream,Content-Type:application/json,Content-Type:application/xml...
 备注|可选
 请求内容|请求内容
