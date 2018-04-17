@@ -1,7 +1,7 @@
 # API 接口文档规范 API document standard
  
   V1.0
-   
+   大家有什么意见和建议，可以在issues提出。
 
  
 
