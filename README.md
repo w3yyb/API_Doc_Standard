@@ -30,14 +30,16 @@
     ...
 }
 ```
-> Api returnCode定义
+> Api returnCode定义(一般采用http状态码)
 
 
 code|value
 ---|---
 200|正常
-500|其他异常
+500|服务器错误
+自定义|自定义
  
+ http状态码参考 https://httpstatuses.com/
 
 
 ## 接口签名规范 <a name="api_sign_index"/>
