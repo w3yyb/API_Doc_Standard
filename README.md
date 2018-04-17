@@ -25,7 +25,9 @@
 ```
 {
     "code":"", //必选,返回码
-    "message":"" //可选，返回消息， 
+    "message":"" ,//可选，返回消息， 
+    "other":""可选
+    ...
 }
 ```
 > Api returnCode定义
@@ -78,6 +80,14 @@ put php  code here
 参数|描述|必填|类型
 ---|---|---|---
 param|参数示例1|是|string
+param2|参数示例2|是|int
+ 响应参数|如下:
+
+参数|描述|必有|类型
+---|---|---|---
+code|响应码|是|int
+message|响应消息|否|string
+param|参数示例1|否|string
 param2|参数示例2|是|int
  
  请求示例：
