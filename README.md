@@ -75,12 +75,16 @@ put php  code here
 响应码|200
 响应头|可选
 响应格式|json,xml...
+
+
 请求参数|如下:
 
 参数|描述|必填|类型
 ---|---|---|---
 param|参数示例1|是|string
 param2|参数示例2|是|int
+
+
  响应参数|如下:
 
 参数|描述|必有|类型
@@ -88,7 +92,7 @@ param2|参数示例2|是|int
 code|响应码|是|int
 message|响应消息|否|string
 param|参数示例1|否|string
-param2|参数示例2|是|int
+param2|参数示例2|否|int
  
  请求示例：
 
