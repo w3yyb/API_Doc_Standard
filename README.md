@@ -12,9 +12,8 @@
     * [接口签名规范](#api_sign_index)
     * [接口请求示例](#api_demo_index)
 * [二.API说明](#api_common_index) 
-    * [前言](#preface_index)      
-    * [非任务推送](#untask_push_index)  
-      
+    * [接口1](#api_1)
+    * [应用场景](#yycj_1_index) 
 
 
 # API接口规范 <a name="api_standard_index"/>
@@ -55,7 +54,7 @@ put php  code here
 # API说明 <a name="api_common_index"/>
  
 
-## 接口1 <a name="untask_push_index"/>
+## 接口1 <a name="api_1"/>
 ### 应用场景 <a name="yycj_1_index"/>
 
 > 场景1：xxxxxxxx
