@@ -11,9 +11,9 @@
     * [接口响应规范](#api_resp_index)
     * [接口签名规范](#api_sign_index)
     * [接口请求示例](#api_demo_index)
-* [二.API说明](#api_common_index) 
-    * [接口1](#api_1)
-    * [应用场景](#yycj_1_index) 
+* [二.API说明](#api_common_index)
+    * [接口1](#api_1)
+    * [应用场景](#yycj_1_index)
 
 
 # API接口规范 <a name="api_standard_index"/>
