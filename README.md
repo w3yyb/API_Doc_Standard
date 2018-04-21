@@ -73,7 +73,7 @@ put php  code here
 请求头(和请求格式对应)|Content-Type:application/x-www-form-urlencoded,Content-Type:application/multipart/form-data,Content-Type:application/octet-stream,Content-Type:application/json,Content-Type:application/xml...
 备注|可选
 请求内容|请求内容
-响应码|200
+响应码|响应码
 响应头|可选
 响应格式|json,xml...
 
