@@ -128,4 +128,4 @@ param2|参数示例2|否|int
 ```
  
 
- https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md
+ 可参考  ： https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md
