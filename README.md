@@ -39,7 +39,7 @@ code|value
 5xx|服务器端错误
 自定义|自定义
  
- http状态码参考 https://httpstatuses.com/
+ http状态码参考 https://httpstatuses.p2hp.com/
 
 
 ## 接口签名规范 <a name="api_sign_index"/>
