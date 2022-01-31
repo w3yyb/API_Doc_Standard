@@ -45,6 +45,7 @@ code|value
 ## 接口签名规范 <a name="api_sign_index"/>
 >   为了防止提交到接口的明文泄密，可以对提交到接口的数据加密，可以用AES加密算法。微信公众平台官方API接口就是采用此算法。
 >   加密方法：所有提交过来的数据都使用AES加密算法+Base64算法加密
+>   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==
 
 1.AES加密参数：
 
@@ -100,6 +101,35 @@ if (in_array($cipher, openssl_get_cipher_methods()))
 }
 ```
  
+## 接口请求示例 <a name="api_demo_index"/>
+
+```
+POST http://server-api.xxx.com/api HTTP/1.1
+Host: server-api.xxx.com
+Connection: keep-alive
+Content-Length: 226
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.8
+
+alias=xxx&appId=xxx&messageJson=%7B%22title%22%3A%22title%22%2C%22content%22%3A%22hello+test%22%2C%22pushTimeInfo%22%3A%7B%22offLine%22%3A1%2C%22validTime%22%3A24%7D%7D&sign=YkilCuxHOgY5Bv9pGgXcwA==
+
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 28 Dec 2016 03:34:53 GMT
+Content-Type: application/json; charset=UTF-8
+Content-Length: 87
+Connection: keep-alive
+Content-Language: zh-CN
+Set-Cookie: JSESSIONID=1wl3nhcfqroiicj6pvxwdvjx6;Path=/
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+
+
+{"code":200,"message":"ok","content":{"data":["xxxxxx"]}}
+```
 
 
 
@@ -135,6 +165,7 @@ if (in_array($cipher, openssl_get_cipher_methods()))
 
 参数|描述|必填|类型
 ---|---|---|---
+sign|签名|是|string
 param|参数示例1|是|string
 param2|参数示例2|是|int
 
