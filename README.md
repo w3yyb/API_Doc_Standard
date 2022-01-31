@@ -56,8 +56,10 @@ code|value
 
 填充：PKCS7(PKCS7与PKCS5结果一样)（微信公众平台用的是PKCS7填充）
 
-加密步骤：
+2.加密步骤：
+
 对数据进行AES加密。
+
 对AES加密后的数据进行Base64加密。
  
 
@@ -68,6 +70,7 @@ code|value
 2）AES加密后数据：“bH� �G:9�i_x0005_��”
 
 3）Base64加密后数据：“YkilCuxHOgY5Bv9pGgXcwA==”
+参考：https://blog.p2hp.com/archives/5459 
 
 
 ```php
