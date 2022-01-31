@@ -44,9 +44,9 @@ code|value
 
 ## 接口签名规范 <a name="api_sign_index"/>
 >   为了防止提交到接口的明文泄密，可以对提交到接口的数据加密，可以用AES加密算法。微信公众平台官方API接口就是采用此算法。
->   加密方法：所有提交过来的数据都使用AES加密算法+Base64算法加密
->   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==
-
+>   加密方法：所有提交过来的数据都使用AES加密算法+Base64算法加密  
+>   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==  
+  
 
 1.AES加密参数：
 
@@ -110,7 +110,7 @@ Host: server-api.xxx.com
 Connection: keep-alive
 Content-Length: 226
 Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 Accept: */*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8
@@ -152,7 +152,7 @@ Expires: Thu, 01 Jan 1970 00:00:00 GMT
 请求协议|HTTP,HTTPS
 请求方法|POST,GET,PUT,DELETE,HEAD,OPTIONS,PATCH.
 请求格式|form url encoded,multipart form,file,json,xml...
-请求url| http://localhost/pushmsg?name=tom
+请求url| http://localhost/pushmsg?sign=xxxxxxxxxxxxx
 请求头(和请求格式对应)|Content-Type:application/x-www-form-urlencoded,Content-Type:application/multipart/form-data,Content-Type:application/octet-stream,Content-Type:application/json,Content-Type:application/xml...
 备注|可选
 请求内容|请求内容
