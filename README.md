@@ -128,6 +128,7 @@ if (in_array($cipher, openssl_get_cipher_methods()))
 响应码|响应码
 响应头|可选
 响应格式|json,xml...
+响应内容|可选
 
 
 请求参数,如下:
@@ -144,8 +145,7 @@ param2|参数示例2|是|int
 ---|---|---|---
 code|响应码|是|int
 message|响应消息|否|string
-param|参数示例1|否|string
-param2|参数示例2|否|int
+content|响应内容|否|json
  
  请求示例：
 
@@ -164,6 +164,7 @@ param2|参数示例2|否|int
 {
     "code": 200,
     "message": "成功",
+    "content":{"title":"text"}
      
 }
 ```
@@ -175,6 +176,7 @@ param2|参数示例2|否|int
 {
     "code": 500,
     "message": "失败",
+    "content":{"title":"text"}
     
 }
 ```
