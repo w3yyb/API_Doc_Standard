@@ -47,6 +47,7 @@ code|value
 >   加密方法：所有提交过来的数据都使用AES加密算法+Base64算法加密
 >   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==
 
+
 1.AES加密参数：
 
 加密模式:AES-128-ECB （可用更安全的aes-128-cbc-微信公众平台在用））
@@ -104,7 +105,7 @@ if (in_array($cipher, openssl_get_cipher_methods()))
 ## 接口请求示例 <a name="api_demo_index"/>
 
 ```
-POST http://server-api.xxx.com/api HTTP/1.1
+POST http://server-api.xxx.com/api?sign=YkilCuxHOgY5Bv9pGgXcwA== HTTP/1.1
 Host: server-api.xxx.com
 Connection: keep-alive
 Content-Length: 226
@@ -114,7 +115,7 @@ Accept: */*
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8
 
-alias=xxx&appId=xxx&messageJson=%7B%22title%22%3A%22title%22%2C%22content%22%3A%22hello+test%22%2C%22pushTimeInfo%22%3A%7B%22offLine%22%3A1%2C%22validTime%22%3A24%7D%7D&sign=YkilCuxHOgY5Bv9pGgXcwA==
+{"title":"xxxx","content":"xxxxxxx"}
 
 
 HTTP/1.1 200 OK
