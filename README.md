@@ -45,7 +45,7 @@ code|value
 ## 接口签名规范 <a name="api_sign_index"/>
 >   为了防止提交到接口的明文泄密，可以对提交到接口的数据加密，可以用AES加密算法。微信公众平台官方API接口就是采用此算法。
 >   加密方法：所有提交过来的数据都使用AES加密算法+Base64(base64UrlEncode)算法加密  
->   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==  
+>   将签名值放在请求的参数中例如sign=ducL9jnRX1De2o15_xw6xg  
   
 
 1.AES加密参数：
@@ -71,7 +71,7 @@ code|value
 
 2）AES加密后数据：“bH� �G:9�i_x0005_��”
 
-3）base64UrlEncode加密后数据：“YkilCuxHOgY5Bv9pGgXcwA==”
+3）base64UrlEncode加密后数据：“ducL9jnRX1De2o15_xw6xg”
 参考：https://blog.p2hp.com/archives/5459 
 
 
@@ -128,7 +128,7 @@ if (in_array($cipher, openssl_get_cipher_methods()))
 ## 接口请求示例 <a name="api_demo_index"/>
 
 ```
-POST http://server-api.xxx.com/api?sign=YkilCuxHOgY5Bv9pGgXcwA== HTTP/1.1
+POST http://server-api.xxx.com/api?sign=ducL9jnRX1De2o15_xw6xg HTTP/1.1
 Host: server-api.xxx.com
 Connection: keep-alive
 Content-Length: 226
