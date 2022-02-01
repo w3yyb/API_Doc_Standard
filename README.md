@@ -44,7 +44,7 @@ code|value
 
 ## 接口签名规范 <a name="api_sign_index"/>
 >   为了防止提交到接口的明文泄密，可以对提交到接口的数据加密，可以用AES加密算法。微信公众平台官方API接口就是采用此算法。
->   加密方法：所有提交过来的数据都使用AES加密算法+Base64算法加密  
+>   加密方法：所有提交过来的数据都使用AES加密算法+Base64(base64UrlEncode)算法加密  
 >   将签名值放在请求的参数中例如sign=YkilCuxHOgY5Bv9pGgXcwA==  
   
 
@@ -62,7 +62,7 @@ code|value
 
 对数据进行AES加密。
 
-对AES加密后的数据进行Base64加密。
+对AES加密后的数据进行Base64(base64UrlEncode)加密。
  
 
 3.加密示例：
@@ -71,7 +71,7 @@ code|value
 
 2）AES加密后数据：“bH� �G:9�i_x0005_��”
 
-3）Base64加密后数据：“YkilCuxHOgY5Bv9pGgXcwA==”
+3）base64UrlEncode加密后数据：“YkilCuxHOgY5Bv9pGgXcwA==”
 参考：https://blog.p2hp.com/archives/5459 
 
 
@@ -80,7 +80,30 @@ code|value
 //$key previously generated safely, ie: openssl_random_pseudo_bytes
 $key='123456789';
  
-  
+   /**
+     * base64UrlEncode   https://jwt.io/  中base64UrlEncode编码实现
+     * @param string $input 需要编码的字符串
+     * @return string
+     */
+     function base64UrlEncode($input)
+    {
+        return str_replace('=', '', strtr(base64_encode($input), '+/', '-_'));
+    }
+
+    /**
+     * base64UrlEncode  https://jwt.io/  中base64UrlEncode解码实现
+     * @param string $input 需要解码的字符串
+     * @return bool|string
+     */
+     function base64UrlDecode($input)
+    {
+        $remainder = strlen($input) % 4;
+        if ($remainder) {
+            $addlen = 4 - $remainder;
+            $input .= str_repeat('=', $addlen);
+        }
+        return base64_decode(strtr($input, '-_', '+/'));
+    }
 $plaintext="hello world";
  //$cipher = "aes-128-cbc";
  $cipher = "aes-128-ecb";
@@ -92,9 +115,9 @@ if (in_array($cipher, openssl_get_cipher_methods()))
     // $iv='1111111111111111';
     $iv='';
     $ciphertext = openssl_encrypt($plaintext, $cipher, $key, OPENSSL_RAW_DATA, $iv);//如果去掉OPENSSL_RAW_DATA参数,则直接输出base64编码的,不用再base64编码
-    $ciphertext =base64_encode($ciphertext);
+    $ciphertext =base64UrlEncode($ciphertext);
     //store $cipher, $iv, and $tag for decryption later
-    $original_plaintext = openssl_decrypt(base64_decode($ciphertext), $cipher, $key, OPENSSL_RAW_DATA, $iv);
+    $original_plaintext = openssl_decrypt(base64UrlDecode($ciphertext), $cipher, $key, OPENSSL_RAW_DATA, $iv);
 
 
     var_dump( $original_plaintext);
@@ -213,5 +236,6 @@ content|响应内容|否|json
 }
 ```
  
+ 安全加强：IP白名单，限速，token过期时间。
 
  可参考  ： https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md
